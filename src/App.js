@@ -1,14 +1,11 @@
 
-import './App.css';
-import Days from './Days';
+import './static/styles/App.css';
+import Container from './components/Container';
 
 function App(props) {
   return (
-    <div>
-      <Days age={10}/>
-      <Days age={20}/>
-      <Days age={30}/>
-    </div>
+      <Container>
+      </Container> 
   );
 }
 
