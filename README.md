@@ -22,6 +22,7 @@ https://www.figma.com/file/AQ9NFkDQ1xlwc2gjGiK1e8/didilist?node-id=0%3A1&t=O63pE
 
 ## 기능
 댓글다는 기능처럼 새로운 박스를 만들어 위에서부터 쌓이도록 했다.
+
 List.js
 ```js
 import React, { useState } from "react";
@@ -101,4 +102,5 @@ export default ItemList;
 
 
 항상 느끼는거지만 이리저리 가지고 노는게 아주 재밌습니다.
+
 내일은 선택 기능을 추가하는걸로
