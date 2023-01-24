@@ -20,7 +20,6 @@ const List = () =>{
         <hr />
       </div>
     </div>
-
   )
 }
 
