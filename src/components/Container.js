@@ -5,7 +5,6 @@ const Container=()=>{
     <div className="container_">      
       <h1 className="title"> WHAT DID I DO TODAY?</h1>
       <List/>
-      {/* <footer>designed by sloth</footer> */}
     </div>
   ) 
 };

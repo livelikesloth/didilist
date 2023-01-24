@@ -3,16 +3,17 @@ body{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items:center;
 }
 /* CONTAINER */
 .container_{
   width: 820px;
-  height:720px;  
+  height:700px;  
   padding:35px;
   border: 20px black dashed;
   border-radius: 10px;
-  /* filter: drop-shadow(3px 3px 1px #F4ED36); */
+  overflow: auto;
+  filter: drop-shadow(3px 3px  #F4ED36);
 }
 
 @media (max-width: 949px) {
@@ -21,7 +22,7 @@ body{
     height:95vh;
     padding: 10px;
     border: 10px black dashed;
-    /* filter: drop-shadow(0px 1px 1px #F4ED36); */
+    filter: drop-shadow(0px 1px  #F4ED36);
   }
 }
 /* TITLE */
@@ -31,18 +32,21 @@ body{
   color: #F4ED36;
   font-size: 40px;
   text-align: center;
+  filter: drop-shadow(3px 3px  black);
 }
 /* FOOTER */
 footer{
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #F4ED36;
-  font-size: 10px;
+  font-size: 8px;
   text-align: center;
+  padding-top: 20px;
+  /* letter-spacing: -px; */
 }
 /* LIST */
-.list_container{
+/* .list_container{
 
-}
+} */
 .item_list{
   display: flex;
   flex-flow: row ;
@@ -89,7 +93,7 @@ footer{
 .button_{
   display: block;  
   width: 65px;
-  height: 65px;
+  height: 70px;
   background-color: #61609A;
   border: 3px solid #222222;
   box-shadow: 4px 4px 1px #222222;
@@ -98,12 +102,14 @@ footer{
   text-align: center;
   font-size: 50px;  
   line-height:1.3;
-
+  cursor: pointer;
 }
-.button_ :hover{
+.button_:hover{
   cursor: pointer;
   background-color: #383861;
+  transition: 0.5s;
 }
+
 .add_button{
   font-size: 70px;
   line-height: 0.9;
