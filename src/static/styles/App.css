@@ -65,7 +65,7 @@ footer{
 } */
 .item_list{
   display: flex;
-  flex-flow: row ;
+  flex-flow: row  ;
   justify-content: space-between;
   align-items: center;
 }
