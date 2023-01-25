@@ -34,6 +34,23 @@ body{
   text-align: center;
   filter: drop-shadow(3px 3px  black);
 }
+/* LINK */
+.link{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.link_button{
+  font-family: 'Irish Grover', cursive;
+  font-size: 20px;
+  font-weight: bolder;
+  color:#222222;
+  background-color: #22222200;
+  border: none;
+  line-height: 30px;
+  cursor: pointer;
+}
 /* FOOTER */
 footer{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -45,7 +62,6 @@ footer{
 }
 /* LIST */
 /* .list_container{
-
 } */
 .item_list{
   display: flex;
@@ -117,4 +133,46 @@ footer{
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+/* SELECTDAY */
+.selectDay_container{
+  
+}
+.selectDay_container .item_list{
+
+}
+.selectDay_container .items_{
+  line-height:unset;
+}
+.selectDay_container .game_title{
+  margin: 10px;
+}
+.selectDay_container .game_item{
+  margin:10px 30px 10px 30px;
+
+}
+@media (max-width: 949px) {
+  .container_{
+    width: 90vw;
+    height:95vh;
+    padding: 10px;
+    border: 10px black dashed;
+    filter: drop-shadow(0px 1px  #F4ED36);
+    transition: 1s;
+  }
+  .item_list  .item_input{
+    font-size:18px
+  }
+  .list_container .item_list .items_{
+    font-size:16px;
+    line-height:4;
+  }
+  .title{
+    margin: 0;
+  }
+  .selectDay_container .items_{
+    font-size: 14px;
+  }
+
 }

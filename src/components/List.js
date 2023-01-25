@@ -12,7 +12,7 @@ const List = (props) => {
     setItem(''); //글창을 빈문자열로 초기화
   };
   const onEnter=(e)=>{
-    if(e.key == 'Enter'){ //Enter 누르면 post실행하기
+    if(e.key === 'Enter'){ //Enter 누르면 post실행하기
       post();
     }
   }
@@ -54,3 +54,5 @@ const List = (props) => {
 };
 
 export default List;
+
+

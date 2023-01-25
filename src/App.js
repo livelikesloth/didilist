@@ -4,8 +4,7 @@ import Container from './components/Container';
 
 function App(props) {
   return (<>
-      <Container>
-      </Container> 
+      <Container/>
       <footer>SLOTH IS ONE OF THE MOST EXTREME ANIMAL IN THE WORLD</footer>
       </>);
 }
