@@ -35,8 +35,8 @@ const List = (props) => {
           />
           <button
             className="button_"
+            disabled={isValid?false:true}// 빈칸이면 게시 불가
             onClick={()=>{post()}} // 클릭하면 위에 선언한 post 함수를 실행해서 feedItems에 담겨 다시 렌더된다.
-            disabled={isValid?false:true} // 빈칸이면 게시 불가
           >+</button>
         </div>
         {feedItems.map((itemArr, i) => { // 반복적으로 추가되는걸 하나하나 담을 예정
