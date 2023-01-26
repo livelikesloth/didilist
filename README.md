@@ -1,4 +1,4 @@
-# 재밌게도 뭘 할지 적는 게 아니라 뭘 했는지 적는 곳
+# 재밌게도 뭘 할지 적는 게 아니라 뭘 했는지 적는 
 ## 결과
 ### 기본 모양과 반응형
 ![image](https://user-images.githubusercontent.com/100043324/214741022-58794706-c257-405d-9eff-fb6f6e0f8ab3.png)
@@ -118,7 +118,7 @@ export default ItemList;
 ## 나의 하루 시나리오 게임
 
 ### 결과
-
+![시나리오](https://user-images.githubusercontent.com/100043324/214742726-b4c0f568-967a-4e91-9f5e-8a3d69a568f2.gif)
 
 ### 시나리오
 기상부터 잠들기 전까지의 일과를 선택 시나리오 게임으로 만들어 보았다.
@@ -267,3 +267,77 @@ export default ItemList;
 - 실패 꿈만 같은 하루였군요. 꿈에서 깹니다.
 1로 돌아갑니다.
 
+
+## 주요 기능
+
+```js
+import React, { useState } from "react";
+
+const SelectDay = () => {
+const [scenario,setScenario] =useState('start'); //시나리오 이동을 위한 state
+const changeScenario=(props)=>{ // props 로 받아와서 바뀐다.
+  setScenario(props)
+};
+const [bad,setBad]=useState(0); //게임 오버를 만들기 위한 bad 수치 0부터 시작
+const addBad=(e)=>{ //e로 숫자를 받아와서 뿌려준다
+  setBad(bad+e)
+};
+const minusBad=(e)=>{
+setBad(bad-e)
+};
+const resetBad=()=>{ //게임이 끝나고 리셋
+  setBad(bad===0)
+}
+const checkBad=()=>{ // 만약 bad가 3이상이면 배드엔딩1 -2이하이면 배드엔딩2로 간다.
+  if(bad>=3){
+    changeScenario("badEnding01")
+  }else if(bad<=-2){
+    changeScenario("badEnding02")
+  }
+};
+         
+  return (
+
+        <div className="game_item_list">
+          {
+            {
+              start:
+                <div className="items_"><div className="game_title">침실</div>
+                  <div className="intro_">오전 7:30, 손목시계에서 알람이 울린다.</div>
+                  <button className="game_item" onClick={()=>{changeScenario("s2");}}>알람을 듣고 일어난다.</button> <br />
+                  <button className="game_item" onClick={()=>{changeScenario("s1_1");}}>알람을 끄고 다시 잔다.</button>
+                </div>,
+              s1_1:
+                <div className="items_"><div className="game_title">침실</div>
+                <div className="intro_">개들이 오줌마렵다고 낑낑대서 얼마 안가 잠에서 깼다 </div>
+                  <button className="game_item" onClick={()=>{changeScenario("s2"); checkBad();}}>화장실을 사용하고 주방으로 향한다.</button> <br />
+                  <button className="game_item" onClick={()=>{changeScenario("s2"); checkBad();}}>졸린 눈을 비비며 주방으로 향한다.</button>
+                </div>,
+              s2:
+                <div className="items_"><div className="game_title">주방</div>
+                <div className="intro_">아침에 일어나면 커피를 마셔야 한다.</div>
+                  <button className="game_item" onClick={()=>{changeScenario("s3"); checkBad(); }}>개들을 뒷마당으로 보내고 커피를 내린다.</button> <br />
+                  <button className="game_item" onClick={()=>{changeScenario("s2_1"); addBad(1);}}>커피를 내린다.</button>
+                </div>,
+              s2_1:
+                <div className="items_"><div className="game_title">주방</div>
+                <div className="intro_">개들이 소파옆에 오줌을 쌌다.</div>
+                  <button className="game_item" onClick={()=>{changeScenario("s3"); addBad(1); checkBad();}}>오줌을 대충 닦고 거실로 향한다.</button> <br />
+                  <button className="game_item" onClick={()=>{changeScenario("s3"); minusBad(1); checkBad();}}>오줌을 깨끗하게 닦고 거실로 향한다.</button>
+                </div>,
+              .
+              .
+              .
+              .
+            }[scenario]//scenario 받아주기
+          }
+        </div>
+
+  );
+};
+
+export default SelectDay;
+```
+
+
+상상하고 구현하는데 재밌는 시간을 보냈다.
