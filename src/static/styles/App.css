@@ -1,3 +1,12 @@
+:root {
+    --link-black: #222;
+}
+/* 
+  #222222가 많이 반복되고 있어요. 이런 경우 root 영역에서 변수로 선언해주세요.
+  그리고 사용되는 곳에서 var(--link-black) 으로 사용하면 좋아요.
+  see : line no. 53
+  개발자라면 css도 변수로 관리해야죠.
+*/
 body {
     height: 100vh;
     display: flex;
@@ -43,8 +52,8 @@ body {
     font-family: 'Irish Grover', cursive;
     font-size: 20px;
     font-weight: bolder;
-    color: #222222;
-    background-color: #22222200;
+    color: var(--link-black);
+    background-color: #22222200; /* ??? */
     border: none;
     line-height: 30px;
     cursor: pointer;
