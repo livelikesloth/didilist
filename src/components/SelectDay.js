@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 const SelectDay = () => {
     const [scenario, setScenario] = useState('start');
     const changeScenario = props => {
-        setScenario(props);
+        setScenario(props); // ?
     };
     const [bad, setBad] = useState(0);
+
+    // 스코어를 표현하는 변수가 왜 e...?
     const addBad = e => {
         setBad(bad + e);
     };
@@ -23,6 +25,9 @@ const SelectDay = () => {
         }
     };
 
+    // 개발자가 만든 코드보다는 퍼블리셔가 만든 코드 같아요.
+    // items_ 코드를 복사 / 붙여넣기 하기보다는 텍스트를 loop로 제어해보세요.
+
     return (
         <div className="game_item_list">
             {
@@ -34,6 +39,7 @@ const SelectDay = () => {
                             <button
                                 className="game_item"
                                 onClick={() => {
+                                    // arrow function이 필요하지 않아요.
                                     changeScenario('s2');
                                 }}
                             >
