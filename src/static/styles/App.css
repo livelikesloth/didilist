@@ -17,6 +17,8 @@ body {
 /* CONTAINER */
 .container_ {
     width: 820px;
+    /* 리스트를 계속해서 추가하게 되면 길이가 계속 길어지는 오류를 수정했습니다. */
+    max-height: 80vh;
     padding: 35px;
     border: 20px black dashed;
     border-radius: 10px;

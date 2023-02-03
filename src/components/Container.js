@@ -3,7 +3,7 @@ import List from './List';
 import SelectDay from './SelectDay';
 import Header from './Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SelectDay2 from './SelectDay2';
+
 const Container = () => {
     return (
         <BrowserRouter>
@@ -11,7 +11,7 @@ const Container = () => {
                 <Header />
                 <Routes>
                     <Route path="/" element={<List />} />
-                    <Route path="/day/" element={<SelectDay2 />} />
+                    <Route path="/day/" element={<SelectDay />} />
                 </Routes>
             </div>
         </BrowserRouter>
