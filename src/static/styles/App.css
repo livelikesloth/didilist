@@ -10,7 +10,7 @@
 body {
     height: 100vh;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
 }
@@ -175,7 +175,7 @@ footer {
 }
 @media (max-width: 949px) {
     .item_list .item_input {
-        font-size: 18px;
+        font-size: 12px;
     }
     .list_container .item_list .items_ {
         font-size: 16px;

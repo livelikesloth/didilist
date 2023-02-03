@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import ItemList from './ItemList';
 
 const List = () => {
+    let [placeholderMessage, setPlaceholderMessage] = useState('오늘은 무슨 일이 있었나요?');
     let [item, setItem] = useState(''); //입력중인 글 input태그에서 onChange 사용해 담기
     let [feedItems, setFeedItems] = useState([]); //글 리스트를 담으려고 만듬
     let [isValid, setIsValid] = useState(false); // 게시 가능여부(유효성 검사)
-    //isEmpty라는 함수를 만들어 입력창의 값이 비어있으면 유효성 탈락
+    //isEmpty라는 함수를 만들어 입력창의 값이 비어있거나 공백으로 이루어져 있으면 유효성 탈락
     const isEmpty = e => {
-        if (e.target.value === '') {
+        if (e.target.value === '' || e.target.value.startsWith(' ')) {
             setIsValid(false);
         } else {
             setIsValid(true);
@@ -20,15 +21,20 @@ const List = () => {
             copyFeedItems.push(item); //기존 댓글 배열이 담겨있는 copyFeedItems에 입력한 item 값을 push
             setFeedItems(copyFeedItems); // 입력한 item이 담겨있을 feedItem 값을 setFeedItem로 변경
             setItem(''); //글창을 빈문자열로 초기화
-            setIsValid(false); //유효성 초기화
+            setPlaceholderMessage('또 어떤일이 있었나요?');
+        } else {
+            //유효성 검사에 탈락하면 사용자에게 알려주기 위한 장치
+            setItem('');
+            setPlaceholderMessage('빈칸이나 첫글자 공백은 허용되지 않습니다!');
         }
+        setIsValid(false); //유효성 초기화
     };
     // 이벤트를 처리하는 함수에 prefix 'on'을 붙이는건 조금 어색해보여요. 내장함수랑 비슷하면 헷갈릴 수 있으니.
     // postOnEnter라는 이름은 어떨까요? onKeyDownEnter 라고 짓는 게 일반적이기는 한데, 호불호가 있어요. 이름 짓는건 자유.
     // --수정완--
     // 키 눌렀을때 enter인지 확인하고 입력창이 빈칸이 아닌지 확인한뒤 맞으면  post실행하기
     const postOnEnter = e => {
-        if (isValid === true && e.key === 'Enter') {
+        if (e.key === 'Enter') {
             post();
         }
     };
@@ -40,7 +46,7 @@ const List = () => {
                     <input
                         type="text"
                         className="item_input"
-                        placeholder="오늘 무엇을 했는지 알려주세요!"
+                        placeholder={placeholderMessage}
                         onChange={e => {
                             setItem(e.target.value); //입력창 상태가 변할 때 마다 setItem통해 item 값 바꾸기
                         }}
