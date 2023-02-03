@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SelectDay = () => {
+const SelectDay2 = () => {
     const [scenario, setScenario] = useState('start');
     const changeScenario = scenario => {
         setScenario(scenario); // ? 변수이름 수정했습니다.
@@ -775,4 +775,4 @@ const SelectDay = () => {
     );
 };
 
-export default SelectDay;
+export default SelectDay2;
