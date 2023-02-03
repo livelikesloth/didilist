@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 
 body {
-  margin: 0;
-  font-family: 'Irish Grover', cursive;
-  background-color: #61609A;
+    margin: 0;
+    /* font-family: 'Irish Grover', cursive; */
 }
-a{
-  text-decoration: none;
+:root {
+    --link-black: #222222;
+    --font-yellow: #f4ed36;
+    --inner-txt-white: #fffee2;
+    --funny-font: 'Irish Grover', cursive;
+    --bg-purple: #61609a;
+    --font-20px: 20px;
+    --br7: 7px;
+
+    font-family: var(--funny-font);
+    background-color: var(--bg-purple);
+}
+a {
+    text-decoration: none;
 }

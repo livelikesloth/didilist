@@ -35,10 +35,10 @@ const SelectDay = () => {
         changeScenario2();
     };
     const checkScore = () => {
-        if (score >= 3) {
+        if (score >= 4) {
             setScenario(ScenarioData[27].scene);
             resetScore();
-        } else if (score <= -2) {
+        } else if (score <= -3) {
             setScenario(ScenarioData[28].scene);
             resetScore();
         }
