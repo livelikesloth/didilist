@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ScenarioData from '../static/data/ScenarioData';
+import Button from './Button';
 
 const SelectDay = () => {
     //scenario의 기본값은 ScenarioData 0번째 배열의 scene을 키값으로 둔 객체
@@ -49,24 +50,12 @@ const SelectDay = () => {
             <div className="items_">
                 <div className="game_title">{scenario.title}</div>
                 <div className="intro_">{scenario.intro}</div>
-                <button
-                    className="game_item"
-                    onClick={() => {
-                        nextScenario1();
-                        checkScore();
-                    }}
-                >
-                    {scenario.button1[0]}
-                </button>
-                <button
-                    className="game_item"
-                    onClick={() => {
-                        nextScenario2();
-                        checkScore();
-                    }}
-                >
-                    {scenario.button2[0]}
-                </button>
+                <Button
+                    scenario={scenario}
+                    nextScenario1={nextScenario1}
+                    nextScenario2={nextScenario2}
+                    checkScore={checkScore}
+                ></Button>
             </div>
         </div>
     );
